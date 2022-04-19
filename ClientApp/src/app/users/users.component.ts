@@ -9,7 +9,7 @@ import { User } from '../models/User';
   templateUrl: './users.component.html'
 })
 export class UsersComponent implements OnInit {
-  public users: User[];
+  public users: User[] = [];
   public showTable : boolean = true;
   public currentUser : User;
   public addUserBoolean : boolean = false;
@@ -23,14 +23,16 @@ export class UsersComponent implements OnInit {
   }
   public async ngOnInit(): Promise<void> {
     this.users = await this.userService.getUsers().toPromise();
-    console.log(this.users)
   }
   public async removeUser(id : number) : Promise<void> {
-    await this.userService.removeUser(id).toPromise();
-    this.users = this.users.filter(e =>{
-      return e.userId != id;
-    });
-    alert("The user has been removed.")
+    if(confirm("Are you sure that you want to delete this user?")){
+
+      await this.userService.removeUser(id).toPromise();
+      this.users = this.users.filter(e =>{
+        return e.userId != id;
+      });
+      alert("The user has been removed.")
+    }
   }
 
   public addUser() : void{

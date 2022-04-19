@@ -27,6 +27,10 @@ namespace UserWebApp.Services.Users
         public async Task DeleteUser(int id)
         {
             var user = await _context.Users.FirstOrDefaultAsync(e => e.UserId == id);
+            if (user == default)
+            {
+                return;
+            }
             _context.Entry(user).State = EntityState.Deleted;
             await _context.SaveChangesAsync();
         }
@@ -40,6 +44,10 @@ namespace UserWebApp.Services.Users
         public async Task<UserDto> GetUser(int id)
         {
             var user = await _context.Users.FirstOrDefaultAsync(e => e.UserId == id);
+            if (user == default)
+            {
+                return new UserDto();
+            }
             return _mapper.Map<UserDto>(user);
         }
 

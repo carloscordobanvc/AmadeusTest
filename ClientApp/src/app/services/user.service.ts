@@ -29,6 +29,7 @@ export class UserService {
     return this.http.delete<void>(`${environment.api}User/${id}`, options)
       .pipe(
         catchError(error => {
+          alert("Some error(s) deleting the user");
           console.log(error);
           return  []; 
         })
@@ -39,6 +40,7 @@ export class UserService {
     return this.http.put<void>(`${environment.api}User`, user)
       .pipe(
         catchError(error => {
+          alert("Some error(s) modifing the user");
           console.log(error);
           return  []; 
         })
@@ -49,6 +51,7 @@ export class UserService {
     return this.http.post<void>(`${environment.api}User`, user)
       .pipe(
         catchError(error => {
+          alert("Some error(s) adding the user");
           console.log(error);
           return  []; 
         })
