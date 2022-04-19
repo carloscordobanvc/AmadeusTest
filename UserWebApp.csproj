@@ -28,8 +28,12 @@
 
   <ItemGroup>
     <!-- Don't publish the SPA source files, but do show them in the project files list -->
+    <Compile Remove="Test\TestProject\**" />
     <Content Remove="$(SpaRoot)**" />
+    <Content Remove="Test\TestProject\**" />
+    <EmbeddedResource Remove="Test\TestProject\**" />
     <None Remove="$(SpaRoot)**" />
+    <None Remove="Test\TestProject\**" />
     <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
   </ItemGroup>
 
