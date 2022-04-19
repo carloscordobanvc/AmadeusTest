@@ -52,5 +52,29 @@ namespace UserWebAppTest
             var response = await context.Users.ToArrayAsync();
             Assert.AreEqual(1, response.Count());
         }
+        [TestMethod]
+        public async Task TryToRemoveUser()
+        {
+            var context = ApplicationDbContextInMemory.Get();
+            var mapper = ApplicationDbContextInMemory.GetMapper();
+            var user = new User()
+            {
+                FirstName = "Carlos",
+                FirstSurname = "Cordoba",
+                Email = "carlosm.cordobae@gmail.com",
+                Cellphone = "3013214435",
+                RoleId = 1
+            };
+            context.Add(user);
+            context.SaveChanges();
+            var userId = user.UserId;
+
+            var context2 = ApplicationDbContextInMemory.Get();
+            var userService = new UserService(context2, mapper);
+            await userService.DeleteUser(userId);
+
+            var response = await context.Users.ToArrayAsync();
+            Assert.AreEqual(0, response.Count());
+        }
     }
 }
