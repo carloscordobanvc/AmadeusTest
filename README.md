@@ -2,6 +2,7 @@
 # ANGULAR AND .NET
 This project is a CRUD of users
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.1.
+
 To run front end in ClientApp route run ng serve
 To run back end in main route run donet run
 ## Development server
