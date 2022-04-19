@@ -1,0 +1,114 @@
+<div class = "row">
+  <div class = "col text-left">
+    <h1 id="tableLabel">Users administration</h1>
+  </div>
+  <div class ="col text-right" *ngIf="showTable">
+    <button type="button" class="btn btn-outline-success ml-4" (click)="addUser()">Add new user</button>
+  </div>
+</div>
+
+<p *ngIf="!users"><em>Loading...</em></p>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="users && showTable">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Birthday</th>
+      <th>Cellphone</th>
+      <th>Options</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users">
+      <td>{{ user.firstName }} {{user.secondName}} {{user.firstSurname}} {{user.secondSurname}}</td>
+      <td>{{ user.email }}</td>
+      <td>{{ user.birthday | date:'MM/dd/y'}}</td>
+      <td>{{ user.cellphone }}</td>
+      <td  width="180" class="remove_lines text-center align-middle">
+        <div class="d-flex">
+          <button tc-button title="Modify user" type="button" class="btn-icon" (click)="modifyUser(user.userId)">
+            <i class="fa fa-pencil" aria-hidden="true"></i>
+          </button>
+          <button tc-button title="Delete user" type="button" class="btn-icon ml-2" (click)="removeUser(user.userId)">
+            <i class="fa fa-user-times" aria-hidden="true"></i>          
+          </button>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="container col-lg-7">
+  <div *ngIf="!showTable">
+    <div class="col-12 mb-3 p-0 row">
+      <div class="text-left p-0 col-4 title2 my-auto">First Name</div>
+      <div class="p-0 col-8">
+        <input class="w-100 form-control mr-2" type="text" [(ngModel)]="currentUser.firstName" name="firstName"
+          maxLength="20" autocomplete="off" />
+      </div>
+    </div>
+    <div class="col-12 mb-3 p-0 row">
+      <div class="text-left p-0 col-4 title2 my-auto">Second Name</div>
+      <div class="p-0 col-8">
+        <input class="w-100 form-control mr-2" type="text" [(ngModel)]="currentUser.secondName" name="secondName"
+          maxLength="20" autocomplete="off" />
+      </div>
+    </div>
+    <div class="col-12 mb-3 p-0 row">
+      <div class="text-left p-0 col-4 title2 my-auto">First Surname</div>
+      <div class="p-0 col-8">
+        <input class="w-100 form-control mr-2" type="text" [(ngModel)]="currentUser.firstSurname" name="firstSurname"
+          maxLength="20" autocomplete="off" />
+      </div>
+    </div>
+    <div class="col-12 mb-3 p-0 row">
+      <div class="text-left p-0 col-4 title2 my-auto">Second Surname</div>
+      <div class="p-0 col-8">
+        <input class="w-100 form-control mr-2" type="text" [(ngModel)]="currentUser.secondSurname" name="secondSurname"
+          maxLength="20" autocomplete="off" />
+      </div>
+    </div>
+    <div class="col-12 mb-3 p-0 row">
+      <div class="text-left p-0 col-4 title2 my-auto">Birthday</div>
+      <div class="p-0 col-8">
+        <input class="w-100 form-control mr-2" type="date" [(ngModel)]="currentUser.birthday" name="birthday"
+          maxLength="20" autocomplete="off" />
+      </div>
+    </div>
+    <div class="col-12 mb-3 p-0 row">
+      <div class="text-left p-0 col-4 title2 my-auto">Cellphone</div>
+      <div class="p-0 col-8">
+        <input class="w-100 form-control mr-2" type="number" [(ngModel)]="currentUser.cellphone" name="cellphone"
+          maxLength="20" autocomplete="off" />
+      </div>
+    </div>
+    <div class="col-12 mb-3 p-0 row">
+      <div class="text-left p-0 col-4 title2 my-auto">Email</div>
+      <div class="p-0 col-8">
+        <input class="w-100 form-control mr-2" type="text" [(ngModel)]="currentUser.email" name="email"
+          maxLength="20" autocomplete="off" />
+      </div>
+    </div>
+    <div class="col-12 mb-3 p-0 row">
+      <div class="text-left p-0 col-4 title2 my-auto">Role</div>
+      <div class="p-0 col-8">
+        <select class="custom-select rounded" name = "role" placeholder="select" [(ngModel)]="currentUser.roleId"
+        name="catalogHomeSelected">
+        <option [ngValue]="role.idRole" *ngFor="let role of roles">{{role.roleName}}</option>
+      </select>
+<!--         <input class="w-100 form-control mr-2" type="text" [(ngModel)]="currentUser.roleId" name="role"
+          maxLength="20" autocomplete="off" /> -->
+      </div>
+    </div>
+    <div class="col-12 mb-3 p-0 row">
+      <button class="mainBtn m-auto" (click)="cancel()">
+            <div>Cancel</div>
+      </button>
+      <button class="mainBtn m-auto" (click)="save()">
+            <div>Save</div>
+      </button>
+    </div>
+  </div>
+
+</div>
