@@ -1,8 +1,11 @@
 # AmadeusTest
 # ANGULAR AND .NET
+This project is a CRUD of users
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.1.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.0.
+To run front end in ClientApp route run ng serve
 
+To run back end in main route run donet run
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
@@ -23,13 +26,6 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
 ## Further help
 
@@ -139,12 +135,6 @@ For establishing trust on other platforms refer to the platform specific documen
 In Tools -> NuGet Package Manager -> Package Manager Console
 
 
-### Create API Controller
-1. Right-click over Controllers Folder
-2. Add -> New Scaffolded item...
-3. API Controller with actions, using Entity Framework
-4. Select the Model class you want to create
-5. Select the Data context class
-6. ADD
+
 
 
