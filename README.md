@@ -132,12 +132,6 @@ For establishing trust on other platforms refer to the platform specific documen
 In Tools -> NuGet Package Manager -> Package Manager Console
 
 
-### Create API Controller
-1. Right-click over Controllers Folder
-2. Add -> New Scaffolded item...
-3. API Controller with actions, using Entity Framework
-4. Select the Model class you want to create
-5. Select the Data context class
-6. ADD
+
 
 
