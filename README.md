@@ -83,28 +83,14 @@ Plugins	y	snippets	de	Visual	Studio	Code
 - TypeScript Hero
 - TypeScript Importer
 
-Command Line
-`https://cmder.en.softonic.com/`
-
-JDeveloper
-`https://www.oracle.com/technologies/developer-tools/jdeveloper/jdeveloper.html`
-
 # DEVELOPMENT
 
-## Visual Studio AWS
-for the usage of the AWS services its necessary to install AWS Toolkit for Visual Studio 2017 and 2019, that is available in `https://marketplace.visualstudio.com/items?itemName=AmazonWebServices.AWSToolkitforVisualStudio2017` and follow this tutorial `https://aws.amazon.com/es/blogs/gametech/how-to-integrate-the-aws-net-sdk-for-games-using-csharp/`
 
 ## Github Management
 
 ### Master Branch
 in the master branch only commit the versions that has finished
 
-### Master Branch
-To commit versions that hasn't finished create a new branch to later pull request
-```
-git checkout -b feature_branch_name
-git push -u origin feature_branch_name
-```
 
 ## ANGULAR - Create Components and Services
 
