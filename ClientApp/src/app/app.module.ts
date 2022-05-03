@@ -23,7 +23,7 @@ import { UsersComponent } from './users/users.component';
     HttpClientModule,
     FormsModule,
     RouterModule.forRoot([
-      { path: 'users', component: UsersComponent,pathMatch: 'full' },
+      { path: '', component: UsersComponent, pathMatch: 'full' },
     ])
   ],
   providers: [],
